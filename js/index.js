@@ -1,4 +1,10 @@
 // Your code goes here
+const navBar = document.querySelector('.nav');
+navBar.addEventListener('click', (event) => {
+event.preventDefault();
+})
+
+
 const headerMouseOver = document.querySelector('.intro img');
 headerMouseOver.addEventListener('mouseover', (element) =>{
     headerMouseOver.style.transform = "scale(1.2)";
@@ -34,17 +40,14 @@ addEventListener('dblclick', () =>{
     document.body.style.background = "white";
 })
 
-addEventListener('dblclick', () =>{
-    wheelP.style.background = "black";
+const introP = document.querySelector('.intro p');
+addEventListener('mousedown', (event) => {
+    introP.style.background = "grey";
+    event.stopPropagation();
+    
 })
 
-addEventListener('mouseover', () =>{
-    document.querySelector('.img-content img').style.width = "10rem";
-    }
-)
-
-addEventListener('mouseleave', () =>{
-    document.querySelector('.img-content img').style.width = "30%";
-    document.querySelector('.img-content img').stopPropergation;
-    }
-)
+addEventListener('mouseup', (event) => {
+    introP.style.background = "white";
+    event.stopPropagation();
+})
